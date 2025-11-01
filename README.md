@@ -8,7 +8,7 @@ A short, hands-on data analysis project exploring *real cryptocurrency market tr
 - *Focus:* Price movement of BTC, ETH, USDT, and BNB  
 
 ## 📈 Visualization
-![Crypto Chart](chart.png)
+![Crypto Chart](crypto_chart.png)
 
 (Stacked area chart comparing daily closing prices and volumes.)
 
