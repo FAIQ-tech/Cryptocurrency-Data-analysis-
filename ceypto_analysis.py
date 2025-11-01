@@ -1,42 +1,33 @@
-# ================================================================
-#  Bitcoin Price Prediction Using Linear Regression
-#  Author: Muhammad Faiq Hayat
-# ================================================================
+# 💰 Cryptocurrency Price Analysis & Prediction
 
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LinearRegression
-from sklearn.pipeline import make_pipeline
-from sklearn.metrics import r2_score
+A short, hands-on *data science and analytics* project exploring *real cryptocurrency market trends* and predicting *Bitcoin closing prices* using Python.
 
-# --- Load Dataset ---
-df = pd.read_csv('crypto_data_updated_13_november.csv')
+## 🧠 Overview
+- *Dataset:* Kaggle – Cryptocurrency Prices  
+- *Tools:* Google Sheets • Python • scikit-learn • Matplotlib  
+- *Goal:* Analyze and visualize trends, then build a simple predictive model.
 
-# --- Feature Engineering ---
-df['Date'] = pd.to_datetime(df['Date'])
-df['Year'] = df['Date'].dt.year
-df['Month'] = df['Date'].dt.month
-df['Day'] = df['Date'].dt.day
-df.drop('Date', axis=1, inplace=True)
+## 🧩 Workflow
+1. Cleaned and organized data in *Google Sheets*
+2. Created a *stacked area chart* comparing BTC, ETH, USDT, and BNB trends
+3. Built a *Python Linear Regression model* to predict Bitcoin closing prices
+4. Evaluated model accuracy using *R² Score*
 
-# --- Define Features and Target ---
-X = df.drop('Close (BTC)', axis=1)
-y = df['Close (BTC)']
+## 📈 Visualization
+![Crypto Chart](chart.png)
 
-# --- Split Data ---
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
-)
+(Chart comparing daily closing prices and volumes)
 
-# --- Create & Train Model ---
-model = make_pipeline(StandardScaler(), LinearRegression())
-model.fit(X_train, y_train)
+## 🧮 Model Script
+CS50_Crypto_Predictor.py  
+A short Python program that loads the dataset, trains a linear regression model, and visualizes predictions.
 
-# --- Evaluate Model ---
-y_pred = model.predict(X_test)
-r2_train = r2_score(y_train, model.predict(X_train))
-r2_test = r2_score(y_test, y_pred)
+## 🔍 Key Insights
+- 🪙 *Bitcoin* shows highest volatility  
+- 💹 *Ethereum* follows similar movement patterns  
+- 💵 *USDT* remains stable (as expected)  
+- 📊 *BNB* displays steady long-term growth  
+- 🤖 Linear Regression provides a baseline model for BTC price prediction  
 
-print(f"Training R² Score: {r2_train:.3f}")
-print(f"Testing R² Score: {r2_test:.3f}")
+## 🧰 Skills Used
+Python • Data Cleaning • Visualization • Machine Learning • Analytical Thinking
