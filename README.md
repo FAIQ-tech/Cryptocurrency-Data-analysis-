@@ -19,4 +19,4 @@ A short, hands-on data analysis project exploring *real cryptocurrency market tr
 - 📊 *BNB* shows steady long-term growth  
 
 ## 🧰 Skills Used
-Data Cleaning • Data Visualization • Analytical Thinking • Spreadsheet Analysis
+Data Cleaning • Data Visualization • Analytical Thinking • Spreadsheet Analysis • Python code configuration and interpretation 
